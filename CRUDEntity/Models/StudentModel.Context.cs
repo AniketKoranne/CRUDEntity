@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRUDEntity
+namespace CRUDEntity.Models
 {
     using System;
     using System.Data.Entity;
@@ -15,10 +15,10 @@ namespace CRUDEntity
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class LearningAKEntities : DbContext
+    public partial class LearningAKEntities1 : DbContext
     {
-        public LearningAKEntities()
-            : base("name=LearningAKEntities")
+        public LearningAKEntities1()
+            : base("name=LearningAKEntities1")
         {
         }
     

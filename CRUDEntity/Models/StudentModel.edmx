@@ -56,7 +56,7 @@
           <Property Name="Student_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Student_Phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="LearningAKEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LearningAKEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="StudentRecords" EntityType="Self.StudentRecord" />
           <FunctionImport Name="AddStudent">
             <Parameter Name="ID" Mode="In" Type="Int32" />
@@ -93,7 +93,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LearningAKModelStoreContainer" CdmEntityContainer="LearningAKEntities">
+        <EntityContainerMapping StorageEntityContainer="LearningAKModelStoreContainer" CdmEntityContainer="LearningAKEntities1">
           <EntitySetMapping Name="StudentRecords">
             <EntityTypeMapping TypeName="LearningAKModel.StudentRecord">
               <MappingFragment StoreEntitySet="StudentRecords">

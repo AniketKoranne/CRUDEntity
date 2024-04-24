@@ -17,25 +17,51 @@
                         <img src="img/L1.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
                         CRUDEntity
                     </a>
-                </div>
-                <div class="row m-4">
-                    <div class="col-md-12">
-                        <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-dark table-hover" AutoGenerateColumns="False" DataKeyNames="Student_ID" DataSourceID="SqlDataSource1">
-                            <Columns>
-                                <asp:BoundField DataField="Student_ID" HeaderText="Student_ID" ReadOnly="True" SortExpression="Student_ID" />
-                                <asp:BoundField DataField="Student_FName" HeaderText="Student_FName" SortExpression="Student_FName" />
-                                <asp:BoundField DataField="Student_MName" HeaderText="Student_MName" SortExpression="Student_MName" />
-                                <asp:BoundField DataField="Student_LName" HeaderText="Student_LName" SortExpression="Student_LName" />
-                                <asp:BoundField DataField="Student_Address" HeaderText="Student_Address" SortExpression="Student_Address" />
-                                <asp:BoundField DataField="Student_Phone" HeaderText="Student_Phone" SortExpression="Student_Phone" />
-                            </Columns>
-                        </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StudentConnection %>" SelectCommand="SELECT * FROM [StudentRecords]"></asp:SqlDataSource>
-                        <asp:EntityDataSource ID="EntityDataSource1" runat="server">
-                        </asp:EntityDataSource>
+                </div>                
+            </nav>
+            <div class="card m-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <asp:TextBox ID="txtStudentID" runat="server" CssClass="form-control" placeholder="Student ID" Enabled="false"></asp:TextBox>
+                        </div>
+                        <div class="col-md-4">
+                            <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" placeholder="First Name"></asp:TextBox>
+                        </div>
+                        <div class="col-md-4">
+                            <asp:TextBox ID="txtMiddleName" runat="server" CssClass="form-control" placeholder="Middle Name"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" placeholder="Last Name"></asp:TextBox>
+                        </div>
+                        <div class="col-md-4">
+                            <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" TextMode="MultiLine" placeholder="Student Address"></asp:TextBox>
+                        </div>
+                        <div class="col-md-4">
+                            <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" TextMode="Phone" placeholder="Phone Number"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <asp:Button ID="btnInsert" runat="server" Text="Save" OnClick="btnInsert_Click" CssClass="btn btn-primary"/>
+                        </div>
+                        <div class="col-md-4">
+                            <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-primary"/>
+                        </div>
+                        <div class="col-md-4">
+                            <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-primary"/>
+                        </div>
                     </div>
                 </div>
-            </nav>
+            </div>
+            <hr />
+            <div class="row m-4">
+                <div class="col-md-12">
+                    <asp:GridView ID="GridView2" runat="server" CssClass="table table-striped table-dark table-hover"></asp:GridView>
+                </div>
+            </div>
         </div>
     </form>
 </body>
