@@ -56,6 +56,13 @@ namespace CRUDEntity
                         // Handle the case where the next student ID is null or not available
                         txtStudentID.Text = "1"; // Set a default value
                     }
+                    if (txtFirstName.Text != "") {
+                        txtFirstName.Text = "";
+                        txtMiddleName.Text = "";
+                        txtLastName.Text = "";
+                        txtAddress.Text = "";
+                        txtPhone.Text = "";
+                    }
                 }
                 else
                 {
@@ -108,6 +115,7 @@ namespace CRUDEntity
                 dbContext.StudentRecords.Add(newStudent);
                 dbContext.SaveChanges();
                 SetNextStudentID();
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "alert('Saved Sucessfully');", true);
             }
 
             // Refresh GridView to display the newly added record
@@ -151,6 +159,7 @@ namespace CRUDEntity
                 // Save changes to the database
                 dbContext.SaveChanges();
                 SetNextStudentID();
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "alert('Updated Sucessfully');", true);
             }
 
             // Refresh GridView to display the updated records
@@ -181,6 +190,7 @@ namespace CRUDEntity
                     // Refresh GridView to display the updated records
                     BindGridView();
                     SetNextStudentID();
+                    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "alert('Deleted Sucessfully');", true);
                 }
                 else
                 {
